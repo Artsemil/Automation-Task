@@ -4,11 +4,11 @@ public class Application {
 
     public static void main(String[] args) {
         Student[] students = new Student[5];
-        students[0] = new Student("Art", "Ilyayeu");
-        students[1] = new Student("Art", "Ilyayeu");
-        students[2] = new Student("Art", "Ilyayeu");
-        students[3] = new Student("Art", "Ilyayeu");
-        students[4] = new Student("Art", "Ilyayeu");
+        students[0] = new Student("Artsem", "Ilyayeu");
+        students[1] = new Student("Ostap", "Bender");
+        students[2] = new Student("Yuri", "Nikulin");
+        students[3] = new Student("Georg", "Vicin");
+        students[4] = new Student("Eugen", "Margunov");
 
         int[] result = new int[5];
         Random rand = new Random();
