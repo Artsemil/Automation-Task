@@ -9,7 +9,7 @@ public class Application {
         String operator;
         while (true){
 
-            System.out.println("Введите первое целое число. Для выхода введите quit");
+            System.out.println("Введите первое число. Для выхода введите quit");
             while(true){
                 Scanner first = new Scanner(System.in);
                 number1 = first.next();
@@ -35,7 +35,7 @@ public class Application {
             if (operator.equals("quit")) break;
 
 
-            System.out.println("Введите второе целое число. Для выхода введите quit");
+            System.out.println("Введите второе число. Для выхода введите quit");
             while(true){
                 Scanner second = new Scanner(System.in);
                 number2 = second.next();
