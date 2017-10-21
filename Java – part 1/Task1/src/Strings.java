@@ -12,7 +12,7 @@ public class Strings {
         } while (str.length()<1);
 
         System.out.println("1)" + toOmonim(str));
-        System.out.print("2)");
+        System.out.println("2)");
         toWords(str);
         System.out.println("3)" + spacesToStars(str));
         System.out.println("4)" + str.toUpperCase());
@@ -29,12 +29,14 @@ public class Strings {
     }
 
     static void toWords(String str){
-        str = str + " ";
+        String parsedStr = str.trim();
+        if (parsedStr.length()<1) return;
+        parsedStr = parsedStr + " ";
         String strNew = "";
-        for (int i = 0; i<str.length(); i++){
-            char a = str.charAt(i);
+        for (int i = 0; i<parsedStr.length(); i++){
+            char a = parsedStr.charAt(i);
             if(a ==' '){
-                if (str.charAt(i-1)==' '){
+                if (parsedStr.charAt(i-1)==' '){
                     continue;
                 }
                 else {
