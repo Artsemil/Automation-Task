@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Romb {
@@ -18,7 +20,6 @@ public class Romb {
                 break;
             }
         }
-
         paintRomb(size);
     }
 
@@ -34,14 +35,80 @@ public class Romb {
     static void paintRomb(int size){
         String space = " ";
         String star = "*";
-        String str = "";
+        List<String> line = new ArrayList<>();
+        String str;
+        int paint1 = size-1;
+        int paint2 = 1;
+        int paint3 = 1;
+        int paint4 = size-2;
         for (int i=0; i<size; i++){
-            for (int j=i; j<size-1; j++){
-                str = str + space;
+            line.add("");
+            str="";
+            for (int j=0; j<size; j++){
+                if (j==paint1){
+                    str= str + star;
+                }
+                else {
+                    str=str+space;
+                }
+                line.set(i,str);
             }
-            System.out.println(str + star);
-            str = "";
+            paint1--;
         }
+
+        for (int i=1; i<size; i++){
+            str="";
+            for (int j=1; j<size; j++){
+                if (j==paint2){
+                    str= str + star;
+                }
+                else {
+                    str=str+space;
+                }
+
+            }
+            line.set(i,line.get(i)+str);
+            paint2++;
+        }
+
+        //сторона 3
+        for (int i=0; i<size; i++){
+            line.add("");
+            str="";
+            for (int j=0; j<size; j++){
+                if (j==paint3){
+                    str= str + star;
+                }
+                else {
+                    str=str+space;
+                }
+                line.set(i+size, str);
+            }
+            paint3++;
+        }
+
+        //сторона 4
+        for (int i=1; i<size-1; i++){
+            str="";
+            for (int j=1; j<size-1; j++){
+                if (j==paint4){
+                    str= str + star;
+                }
+                else {
+                    str=str+space;
+                }
+
+            }
+            line.set(size+i-1,line.get(size+i-1)+str);
+            paint4--;
+        }
+
+
+
+        for (String s: line){
+            System.out.println(s);
+        }
+
     }
 
 
