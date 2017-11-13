@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class GenerateSoundRecords {
     private List<SoundRecord> soundRecords;
-    private Random randomId = new Random(0);
+    private Random randomId = new Random();
     private Random randomLength = new Random(80);
 
     /**
@@ -20,7 +20,7 @@ public class GenerateSoundRecords {
     }
 
     private SoundRecord getRecord() {
-        return new SoundRecord(Compositors.getRandom(), randomId.nextInt(150), randomLength.nextInt(600),
+        return new SoundRecord(Compositors.getRandom(), randomId.nextInt(50), randomLength.nextInt(600),
                 "sonata" + randomId.nextInt(5), 10 + Math.random() * 40);
     }
 

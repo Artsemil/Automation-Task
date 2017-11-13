@@ -15,6 +15,10 @@ public class SoundRecord {
         this.size = size;
     }
 
+    public SoundRecord(){
+
+    }
+
     public Compositors getCompositor() {
         return compositor;
     }

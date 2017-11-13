@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Disk {
+public class DiskWriter {
     private List<SoundRecord> soundRecords = new ArrayList<>();
 
     /**
