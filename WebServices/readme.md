@@ -4,9 +4,10 @@
 2.	Выслать приглашение какому-либо пользователю на использование вашего репозитория.
 
 #### Реализуйте данный функционал двумя способами
+
 1.	С помощью библиотеки Apache HttpComponents(для самостоятельного ознакомления)
 2.	С помощью библиотеки RestAssured или RestTemplate.
 
-###### Ссылка на githubApi 
+##### Ссылка на githubApi
 https://any-api.com/github_com/github_com/docs/API_Description
-
+https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator
