@@ -1,0 +1,13 @@
+public class Run {
+    public static void main(String[] args) {
+        String owner = "Artsemil/";
+        String repo = "Automation-Task/";
+        String url = "https://api.github.com/repos/"+owner+repo+"contributors";
+        String token = "Basic QXJ0c2VtaWw6bTdtdkRBQw==";
+
+        RTemplate restTemplate = new RTemplate();
+        restTemplate.getContributersLogin(url, token);
+        restTemplate.addCollaborator("sqwaerart");
+
+    }
+}
