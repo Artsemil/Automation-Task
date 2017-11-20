@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Run {
     public static void main(String[] args) {
         String owner = "Artsemil/";
@@ -8,6 +10,20 @@ public class Run {
         RTemplate restTemplate = new RTemplate();
         restTemplate.getContributersLogin(url, token);
         restTemplate.addCollaborator("sqwaerart");
+
+        System.out.println("------------------------");
+        ApacheHTTP apacheHTTP = new ApacheHTTP();
+        try {
+            apacheHTTP.getContributersLogin(url, token);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            apacheHTTP.addCollaborator("sqwaerart");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
