@@ -33,6 +33,7 @@ public class Calculator implements PrimitiveCalculator {
     }
 
     public double div(double a, double b) {
+        if (b==0) throw new NullPointerException();
         return a / b;
     }
 }

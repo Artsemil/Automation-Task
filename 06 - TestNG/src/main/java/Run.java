@@ -13,6 +13,8 @@ public class Run {
             System.out.println("Результат: "+ calculator.calculate(reader.getNumber1(),reader.getOperator(),reader.getNumber2()));
         }catch (SymbolEnterException e){
             System.out.println(e.getMessage());
+        }catch (NullPointerException e){
+            System.out.println("Вы пытались поделить на 0!");
         }
     }
 }
