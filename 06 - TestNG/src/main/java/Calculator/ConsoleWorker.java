@@ -4,10 +4,7 @@ import Exceptions.SymbolEnterException;
 
 import java.util.Scanner;
 
-public class ConsoleReader {
-    private String operator;
-    private double number1;
-    private double number2;
+public class ConsoleWorker {
 
     public double enterNumber() throws SymbolEnterException {
         double number;
@@ -15,10 +12,9 @@ public class ConsoleReader {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             String str = scanner.next();
-            if (str.equals("quit")){
+            if (str.equals("quit")) {
                 throw new SymbolEnterException("Число не было введено");
-            }
-            else if (isNumber(str)==true) {
+            } else if (isNumber(str)) {
                 number = Double.parseDouble(str);
                 break;
             }
@@ -30,13 +26,12 @@ public class ConsoleReader {
     public String enterOperator() throws SymbolEnterException {
         String operator;
         System.out.println("Введите операцию. Операция может содержать символы +,-,*,/");
-        while(true){
+        while (true) {
             Scanner operation = new Scanner(System.in);
             operator = operation.next();
-            if (operator.equals("quit")){
+            if (operator.equals("quit")) {
                 throw new SymbolEnterException("Символ не был введен");
-            }
-            else if (isOperation(operator)){
+            } else if (isOperation(operator)) {
                 break;
             }
             System.out.println("Операция может содержать символы +,-,*,/. Для выхода введите quit");
@@ -45,37 +40,12 @@ public class ConsoleReader {
     }
 
     private boolean isNumber(String str) {
-        if (str.matches("^[0-9]*[.]?[0-9]+$")) return true;
-        else return false;
+        return str.matches("^[0-9]*[.]?[0-9]+$");
     }
 
-    static boolean isOperation(String str) {
-        if (str.equals("+")||str.equals("-")||str.equals("*")||str.equals("/")) return true;
-        else return false;
-    }
 
-    public String getOperator() {
-        return operator;
-    }
-
-    public double getNumber1() {
-        return number1;
-    }
-
-    public double getNumber2() {
-        return number2;
-    }
-
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
-
-    public void setNumber1(double number1) {
-        this.number1 = number1;
-    }
-
-    public void setNumber2(double number2) {
-        this.number2 = number2;
+    private boolean isOperation(String str) {
+        return str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/");
     }
 
 }

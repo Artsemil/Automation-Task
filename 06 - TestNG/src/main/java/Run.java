@@ -1,19 +1,19 @@
 import Calculator.Calculator;
-import Calculator.ConsoleReader;
+import Calculator.ConsoleWorker;
 import Exceptions.SymbolEnterException;
 
 public class Run {
     public static void main(String[] args) {
-        ConsoleReader reader = new ConsoleReader();
+        ConsoleWorker worker = new ConsoleWorker();
         try {
-            reader.setNumber1(reader.enterNumber());
-            reader.setNumber2(reader.enterNumber());
-            reader.setOperator(reader.enterOperator());
+            double firstNumber = worker.enterNumber();
+            double secondNumber = worker.enterNumber();
+            String operator = worker.enterOperator();
             Calculator calculator = new Calculator();
-            System.out.println("Результат: "+ calculator.calculate(reader.getNumber1(),reader.getOperator(),reader.getNumber2()));
-        }catch (SymbolEnterException e){
+            System.out.println("Результат: " + calculator.calculate(firstNumber, secondNumber, operator));
+        } catch (SymbolEnterException e) {
             System.out.println(e.getMessage());
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Вы пытались поделить на 0!");
         }
     }

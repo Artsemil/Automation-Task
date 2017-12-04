@@ -1,20 +1,22 @@
 package Calculator;
 
-public class Calculator implements PrimitiveCalculator {
+public class Calculator {
 
-    public double calculate(double a, String o, double b) {
+    public double calculate(double a, double b, String operator) {
         double result = 0;
-        if (o.equals("+")) {
-            result = add(a,b);
-        }
-        if (o.equals("-")) {
-            result = sub(a,b);
-        }
-        if (o.equals("*")) {
-            result = mul(a,b);
-        }
-        if (o.equals("/")) {
-            result = div(a,b);
+        switch (operator) {
+            case "+":
+                result = add(a, b);
+                break;
+            case "-":
+                result = sub(a, b);
+                break;
+            case "*":
+                result = mul(a, b);
+                break;
+            case "/":
+                result = div(a, b);
+                break;
         }
         return result;
     }
@@ -32,8 +34,8 @@ public class Calculator implements PrimitiveCalculator {
         return a * b;
     }
 
-    public double div(double a, double b) {
-        if (b==0) throw new NullPointerException();
+    public double div(double a, double b) throws NullPointerException {
+        if (b == 0) throw new NullPointerException();
         return a / b;
     }
 }
