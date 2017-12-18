@@ -13,13 +13,13 @@ public class BasePage {
         return driver;
     }
 
-    public OnlinerHomePage getHomePage(String url) {
+    public  OnlinerHomePage getHomePage(String url) {
         getDriver().get(url);
         return new OnlinerHomePage();
     }
 
     public static void waitVisibilityOfElement(By locator) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }
