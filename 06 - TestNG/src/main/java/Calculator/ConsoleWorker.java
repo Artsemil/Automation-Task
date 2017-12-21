@@ -39,12 +39,12 @@ public class ConsoleWorker {
         return operator;
     }
 
-    private boolean isNumber(String str) {
-        return str.matches("^[0-9]*[.]?[0-9]+$");
+    public boolean isNumber(String str) {
+        return str.matches("^[-]?[0-9]*[.]?[0-9]+$");
     }
 
 
-    private boolean isOperation(String str) {
+    public boolean isOperation(String str) {
         return str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/");
     }
 
