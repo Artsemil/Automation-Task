@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OnlinerDeviceInformationPage extends BasePage {
 
-    @FindBy(xpath = "//A[@data-href='https://cart.onliner.by'][text()='В корзину'][text()='В корзину'])[1]")
+    @FindBy(xpath = "//td[@class='b-cell-3']/a")
     private List<WebElement> addToCartButton;
 
     @FindBy(xpath = "//A[@href='https://cart.onliner.by/']")

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,9 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class OnlinerSelectedCatalogPage extends BasePage {
-    //private By allDevicesAtPage = By.xpath("div[contains(@class,'schema-product')]");
-    //private By activeDeviceOffer = By.xpath("//div//a[contains(@class,'button_orange')]");
-    @FindBy(xpath = "//div[contains(@class,'schema-product__title')]")
+
+    @FindBy(css = ".schema-product__group")
     private List<WebElement> devicesList;
 
     public OnlinerSelectedCatalogPage(WebDriver driver) {
@@ -25,11 +25,11 @@ public class OnlinerSelectedCatalogPage extends BasePage {
     }
 
     public String getDeviceTitel(WebElement device) {
-        return device.getText();
+        return device.findElement(By.xpath(".//div[@class='schema-product__title']")).getText();
     }
 
     public OnlinerDeviceInformationPage clickOnDeviceLink(WebElement device) {
-        device.click();
+        device.findElement(By.xpath(".//div[@class='schema-product__offers']/a")).click();
         return new OnlinerDeviceInformationPage(getDriver());
     }
 }
